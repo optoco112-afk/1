@@ -105,14 +105,14 @@ export const ReservationAnalytics: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="bg-gray-800 border border-orange-900 rounded-2xl shadow-lg p-8">
+      <div className="bg-gray-900 border border-red-900 rounded-2xl shadow-lg p-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-white mb-2 tracking-wide">Reservation Analytics</h1>
           <p className="text-white">Track reservations by creation date</p>
         </div>
 
         {/* Period Selection */}
-        <div className="mb-8 bg-gray-700 border border-orange-800 rounded-lg p-6">
+        <div className="mb-8 bg-black border border-red-800 rounded-lg p-6">
           <div className="flex flex-wrap gap-4">
             {[
               { key: 'today', label: 'Today' },
@@ -125,8 +125,8 @@ export const ReservationAnalytics: React.FC = () => {
                 onClick={() => setSelectedPeriod(key as any)}
                 className={`px-6 py-3 rounded-lg font-medium transition-colors ${
                   selectedPeriod === key
-                    ? 'bg-yellow-600 text-black'
-                    : 'bg-gray-600 text-white hover:bg-gray-500'
+                    ? 'bg-red-600 text-white'
+                    : 'bg-gray-700 text-white hover:bg-gray-600'
                 }`}
               >
                 {label}
@@ -179,14 +179,14 @@ export const ReservationAnalytics: React.FC = () => {
         </div>
 
         {/* Reservations Table */}
-        <div className="bg-gray-700 border border-gray-600 rounded-lg p-6">
+        <div className="bg-black border border-gray-700 rounded-lg p-6">
           <h3 className="text-lg font-semibold text-white mb-4">
             Reservations Created {getPeriodLabel(selectedPeriod)}
           </h3>
           
           {filteredReservations.length === 0 ? (
             <div className="text-center py-12">
-              <Calendar className="mx-auto w-16 h-16 text-yellow-400 mb-4" />
+              <Calendar className="mx-auto w-16 h-16 text-red-500 mb-4" />
               <p className="text-white text-lg">No reservations found</p>
               <p className="text-gray-400">No reservations were created {getPeriodLabel(selectedPeriod).toLowerCase()}</p>
             </div>
@@ -208,10 +208,10 @@ export const ReservationAnalytics: React.FC = () => {
                 <tbody>
                   {filteredReservations.map((reservation) => (
                     <tr key={reservation.id} className="border-b border-gray-600 hover:bg-gray-600/50">
-                      <td className="py-3 px-4 text-yellow-400 font-mono font-bold">
+                      <td className="py-3 px-4 text-red-500 font-mono font-bold">
                         <button
                           onClick={() => setSelectedReservationId(reservation.id)}
-                          className="hover:text-yellow-300 transition-colors cursor-pointer"
+                          className="hover:text-red-400 transition-colors cursor-pointer"
                         >
                           #{reservation.reservationNumber}
                         </button>

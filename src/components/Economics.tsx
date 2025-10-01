@@ -125,7 +125,7 @@ export const Economics: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="bg-gray-800 border border-orange-900 rounded-2xl shadow-lg p-8">
+      <div className="bg-gray-900 border border-red-900 rounded-2xl shadow-lg p-8">
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-bold text-white mb-2 tracking-wide">Economics Dashboard</h1>
@@ -133,7 +133,7 @@ export const Economics: React.FC = () => {
           </div>
           <button
             onClick={exportData}
-            className="bg-gradient-to-r from-yellow-600 to-amber-700 text-black px-6 py-3 rounded-lg hover:from-yellow-500 hover:to-amber-600 transition-all flex items-center space-x-2 font-semibold"
+            className="bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 rounded-lg hover:from-red-500 hover:to-red-600 transition-all flex items-center space-x-2 font-semibold"
           >
             <Download size={20} />
             <span>Export Data</span>
@@ -141,7 +141,7 @@ export const Economics: React.FC = () => {
         </div>
 
         {/* Time Range Filters */}
-        <div className="mb-8 bg-gray-700 border border-orange-800 rounded-lg p-6">
+        <div className="mb-8 bg-black border border-red-800 rounded-lg p-6">
           <div className="flex flex-wrap gap-4 items-center">
             <div className="flex gap-2">
               {[
@@ -155,8 +155,8 @@ export const Economics: React.FC = () => {
                   onClick={() => handleTimeRangeChange(key as any)}
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     timeRange === key
-                      ? 'bg-yellow-600 text-black'
-                      : 'bg-gray-600 text-white hover:bg-gray-500'
+                      ? 'bg-red-600 text-white'
+                      : 'bg-gray-700 text-white hover:bg-gray-600'
                   }`}
                 >
                   {label}
@@ -172,7 +172,7 @@ export const Economics: React.FC = () => {
                     type="date"
                     value={dateFilter.start}
                     onChange={(e) => setDateFilter(prev => ({ ...prev, start: e.target.value }))}
-                    className="px-3 py-2 bg-gray-600 border border-gray-500 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                    className="px-3 py-2 bg-gray-800 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
                   />
                 </div>
                 <div>
@@ -181,7 +181,7 @@ export const Economics: React.FC = () => {
                     type="date"
                     value={dateFilter.end}
                     onChange={(e) => setDateFilter(prev => ({ ...prev, end: e.target.value }))}
-                    className="px-3 py-2 bg-gray-600 border border-gray-500 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                    className="px-3 py-2 bg-gray-800 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
                   />
                 </div>
               </div>
@@ -234,7 +234,7 @@ export const Economics: React.FC = () => {
 
         {/* Additional Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-gray-700 border border-gray-600 rounded-lg p-6">
+          <div className="bg-black border border-gray-700 rounded-lg p-6">
             <h3 className="text-lg font-semibold text-white mb-4">Reservations Overview</h3>
             <div className="space-y-3">
               <div className="flex justify-between">
@@ -243,24 +243,25 @@ export const Economics: React.FC = () => {
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">Deposits Paid:</span>
-                <span className="text-yellow-400 font-semibold">{economics.depositsPaidCount}</span>
+                <span className="text-red-500 font-semibold">{economics.depositsPaidCount}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">Rest Paid:</span>
-                <span className="text-blue-400 font-semibold">{economics.restPaidCount}</span>
+                <span className="text-red-400 font-semibold">{economics.restPaidCount}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">Fully Paid:</span>
-                <span className="text-green-400 font-semibold">{economics.fullyPaidCount}</span>
+                <span className="text-red-300 font-semibold">{economics.fullyPaidCount}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-300">Pending Reservations:</span>
-                <span className="text-yellow-400 font-semibold">{economics.pendingReservations}</span>
+                <span className="text-red-500 font-semibold">{economics.pendingReservations}</span>
               </div>
             </div>
           </div>
 
           <div className="bg-gray-700 border border-gray-600 rounded-lg p-6">
+          <div className="bg-black border border-gray-700 rounded-lg p-6">
             <h3 className="text-lg font-semibold text-white mb-4">Performance Metrics</h3>
             <div className="space-y-3">
               <div className="flex justify-between">
@@ -287,6 +288,7 @@ export const Economics: React.FC = () => {
           </div>
 
           <div className="bg-gray-700 border border-gray-600 rounded-lg p-6">
+          <div className="bg-black border border-gray-700 rounded-lg p-6">
             <h3 className="text-lg font-semibold text-white mb-4">Date Range</h3>
             <div className="space-y-3">
               <div className="flex justify-between">
@@ -310,7 +312,7 @@ export const Economics: React.FC = () => {
         </div>
 
         {/* Recent Transactions */}
-        <div className="bg-gray-700 border border-gray-600 rounded-lg p-6">
+        <div className="bg-black border border-gray-700 rounded-lg p-6">
           <h3 className="text-lg font-semibold text-white mb-4">Recent Transactions</h3>
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -328,6 +330,7 @@ export const Economics: React.FC = () => {
                 {filteredReservations.slice(0, 10).map((reservation) => (
                   <tr key={reservation.id} className="border-b border-gray-600 hover:bg-gray-600/50">
                     <td className="py-3 px-4 text-yellow-400 font-mono font-bold">
+                    <td className="py-3 px-4 text-red-500 font-mono font-bold">
                       #{reservation.reservationNumber}
                     </td>
                     <td className="py-3 px-4 text-white">
