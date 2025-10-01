@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useData } from '../context/DataContext';
-import { Plus, Edit, Trash2, Shield, User } from 'lucide-react';
+import { Plus, CreditCard as Edit, Trash2, Shield, User } from 'lucide-react';
 
 export const StaffManagement: React.FC = () => {
   const { staff, addStaff, updateStaff, deleteStaff, loading } = useData();
