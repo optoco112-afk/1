@@ -33,23 +33,22 @@ export const Login: React.FC = () => {
     <div 
       className="min-h-screen flex items-center justify-center p-4 relative"
       style={{
-        backgroundImage: `url('/20250707_1730_Soft Scorpion Silhouette_remix_01jzjmfv88eav9vwwp8ge8jkgh (1).png')`,
+        backgroundImage: `url('/musti9-min.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="absolute inset-0 bg-black/60"></div>
-      <div className="relative z-10 bg-gray-800/90 backdrop-blur-sm border border-orange-900 rounded-2xl shadow-2xl p-8 w-full max-w-md">
+      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="relative z-10 bg-gray-800/90 backdrop-blur-sm border border-red-900 rounded-2xl shadow-2xl p-8 w-full max-w-md">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 mb-4">
             <img 
-              src="/image.png" 
-              alt="Scorpion Tattoo Logo" 
-              className="w-20 h-20 rounded-full border-2 border-yellow-600"
+              src="/k314-min.jpg" 
+              alt="Krampus Tattoo Logo" 
+              className="w-20 h-20 rounded-full border-2 border-red-600"
             />
           </div>
-          <h1 className="text-4xl font-bold text-yellow-500 mb-2 tracking-wider">Scorpion Tattoo</h1>
           <h1 className="text-4xl font-bold text-red-500 mb-2 tracking-wider">Krampus Tattoo</h1>
           <p className="text-white">Management Portal</p>
         </div>
@@ -79,7 +78,7 @@ export const Login: React.FC = () => {
                 type={showPassword ? 'text' : 'password'}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition-colors pr-12 placeholder-gray-400"
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors pr-12 placeholder-gray-400"
                 placeholder="Enter your password"
                 autoComplete="current-password"
                 required
@@ -87,7 +86,7 @@ export const Login: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-yellow-400 transition-colors"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-red-400 transition-colors"
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
@@ -106,7 +105,7 @@ export const Login: React.FC = () => {
             className={`w-full py-3 rounded-lg font-semibold tracking-wide transition-all duration-200 ${
               isSubmitting
                 ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                : 'bg-gradient-to-r from-yellow-600 to-amber-700 text-black hover:from-yellow-500 hover:to-amber-600'
+                : 'bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-500 hover:to-red-600'
             }`}
           >
             {isSubmitting ? 'Signing in...' : 'Sign In'}
