@@ -57,7 +57,7 @@ export const TimeSelector: React.FC<TimeSelectorProps> = ({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className={`w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors appearance-none pr-10 ${className}`}
+        className={`w-full px-4 py-3 bg-black border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors appearance-none pr-10 ${className}`}
         required={required}
       >
         <option value="">Select time</option>

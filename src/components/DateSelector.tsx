@@ -115,7 +115,7 @@ export const DateSelector: React.FC<DateSelectorProps> = ({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors text-left flex items-center justify-between ${className}`}
+        className={`w-full px-4 py-3 bg-black border border-gray-700 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors text-left flex items-center justify-between ${className}`}
       >
         <span className={selectedDate ? 'text-white' : 'text-gray-400'}>
           {formatDisplayDate(selectedDate)}
@@ -124,13 +124,13 @@ export const DateSelector: React.FC<DateSelectorProps> = ({
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-gray-800 border border-orange-900 rounded-lg shadow-2xl z-50 p-4">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-black border border-red-900 rounded-lg shadow-2xl z-50 p-4">
           {/* Month Navigation */}
           <div className="flex items-center justify-between mb-4">
             <button
               type="button"
               onClick={() => navigateMonth('prev')}
-              className="p-2 hover:bg-gray-700 rounded-lg transition-colors text-gray-300 hover:text-white"
+              className="p-2 hover:bg-gray-800 rounded-lg transition-colors text-gray-300 hover:text-white"
             >
               <ChevronLeft size={20} />
             </button>
@@ -138,7 +138,7 @@ export const DateSelector: React.FC<DateSelectorProps> = ({
             <button
               type="button"
               onClick={() => navigateMonth('next')}
-              className="p-2 hover:bg-gray-700 rounded-lg transition-colors text-gray-300 hover:text-white"
+              className="p-2 hover:bg-gray-800 rounded-lg transition-colors text-gray-300 hover:text-white"
             >
               <ChevronRight size={20} />
             </button>
@@ -174,10 +174,10 @@ export const DateSelector: React.FC<DateSelectorProps> = ({
                     disabled
                       ? 'text-gray-600 cursor-not-allowed'
                       : selected
-                      ? 'bg-gradient-to-r from-yellow-600 to-amber-700 text-black font-bold'
+                      ? 'bg-gradient-to-r from-red-600 to-red-700 text-white font-bold'
                       : todayDate
-                      ? 'bg-orange-900/30 text-orange-400 hover:bg-orange-900/50'
-                      : 'text-white hover:bg-gray-700'
+                      ? 'bg-red-900/30 text-red-500 hover:bg-red-900/50'
+                      : 'text-white hover:bg-gray-800'
                   }`}
                 >
                   {date.getDate()}
@@ -191,7 +191,7 @@ export const DateSelector: React.FC<DateSelectorProps> = ({
             <button
               type="button"
               onClick={() => handleDateSelect(today)}
-              className="px-4 py-2 text-sm bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors"
+              className="px-4 py-2 text-sm bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
             >
               Today
             </button>

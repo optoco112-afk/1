@@ -110,12 +110,12 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
   return (
     <>
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-        <div className="bg-gray-800 border border-orange-900 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="bg-gray-900 border border-red-900 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-orange-900">
+          <div className="flex items-center justify-between p-6 border-b border-red-900">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-yellow-600 to-amber-700 rounded-full flex items-center justify-center">
-                <Calendar className="w-6 h-6 text-black" />
+              <div className="w-12 h-12 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center">
+                <Calendar className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-white">
@@ -131,14 +131,14 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
                 <>
                   <button
                     onClick={() => setIsEditing(true)}
-                    className="p-2 text-blue-400 hover:bg-blue-900/20 rounded-lg transition-colors"
+                    className="p-2 text-red-400 hover:bg-red-900/20 rounded-lg transition-colors"
                     title="Edit Reservation"
                   >
                     <Edit size={20} />
                   </button>
                   <button
                     onClick={handleDownloadPDF}
-                    className="p-2 text-green-400 hover:bg-green-900/20 rounded-lg transition-colors"
+                    className="p-2 text-red-300 hover:bg-red-900/20 rounded-lg transition-colors"
                     title="Download PDF"
                   >
                     <Download size={20} />
@@ -147,7 +147,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
               )}
               <button
                 onClick={onClose}
-                className="p-2 text-gray-400 hover:bg-gray-700 rounded-lg transition-colors"
+                className="p-2 text-gray-400 hover:bg-gray-800 rounded-lg transition-colors"
               >
                 <X size={20} />
               </button>
@@ -157,7 +157,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
           {/* Content */}
           <div className="p-6 space-y-6">
             {/* Client Information */}
-            <div className="bg-gray-700 border border-gray-600 rounded-lg p-6">
+            <div className="bg-black border border-gray-700 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
                 <User className="w-5 h-5 mr-2" />
                 Client Information
@@ -170,10 +170,10 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
                       type="text"
                       value={editData.firstName}
                       onChange={(e) => setEditData(prev => ({ ...prev, firstName: e.target.value }))}
-                      className="w-full px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
                     />
                   ) : (
-                    <div className="px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg">
+                    <div className="px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg">
                       {reservation.firstName}
                     </div>
                   )}
@@ -185,10 +185,10 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
                       type="text"
                       value={editData.lastName}
                       onChange={(e) => setEditData(prev => ({ ...prev, lastName: e.target.value }))}
-                      className="w-full px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
                     />
                   ) : (
-                    <div className="px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg">
+                    <div className="px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg">
                       {reservation.lastName}
                     </div>
                   )}
@@ -200,10 +200,10 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
                       type="tel"
                       value={editData.phone}
                       onChange={(e) => setEditData(prev => ({ ...prev, phone: e.target.value }))}
-                      className="w-full px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
                     />
                   ) : (
-                    <div className="px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg flex items-center">
+                    <div className="px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg flex items-center">
                       <Phone className="w-4 h-4 mr-2 text-gray-400" />
                       {reservation.phone}
                     </div>
@@ -213,7 +213,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
             </div>
 
             {/* Appointment Details */}
-            <div className="bg-gray-700 border border-gray-600 rounded-lg p-6">
+            <div className="bg-black border border-gray-700 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
                 Appointment Details
@@ -225,10 +225,10 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
                     <DateSelector
                       value={editData.appointmentDate}
                       onChange={(date) => setEditData(prev => ({ ...prev, appointmentDate: date }))}
-                      className="bg-gray-600 border-gray-500"
+                      className="bg-gray-800 border-gray-600"
                     />
                   ) : (
-                    <div className="px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg">
+                    <div className="px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg">
                       {new Date(reservation.appointmentDate).toLocaleDateString()}
                     </div>
                   )}
@@ -239,10 +239,10 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
                     <TimeSelector
                       value={editData.appointmentTime}
                       onChange={(time) => setEditData(prev => ({ ...prev, appointmentTime: time }))}
-                      className="bg-gray-600 border-gray-500"
+                      className="bg-gray-800 border-gray-600"
                     />
                   ) : (
-                    <div className="px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg flex items-center">
+                    <div className="px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg flex items-center">
                       <Clock className="w-4 h-4 mr-2 text-gray-400" />
                       {reservation.appointmentTime}
                     </div>
@@ -254,7 +254,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
                     <select
                       value={editData.artistId}
                       onChange={(e) => setEditData(prev => ({ ...prev, artistId: e.target.value }))}
-                      className="w-full px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
                     >
                       <option value="">Select artist</option>
                       {getArtists().map(artist => (
@@ -262,7 +262,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
                       ))}
                     </select>
                   ) : (
-                    <div className="px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg">
+                    <div className="px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg">
                       {getArtistName(reservation.artistId)}
                     </div>
                   )}
@@ -271,7 +271,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
             </div>
 
             {/* Pricing Information */}
-            <div className="bg-gray-700 border border-gray-600 rounded-lg p-6">
+            <div className="bg-black border border-gray-700 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
                 <DollarSign className="w-5 h-5 mr-2" />
                 Pricing Information
@@ -285,10 +285,10 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
                       step="0.01"
                       value={editData.totalPrice}
                       onChange={(e) => setEditData(prev => ({ ...prev, totalPrice: e.target.value }))}
-                      className="w-full px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
                     />
                   ) : (
-                    <div className="px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg font-semibold">
+                    <div className="px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg font-semibold">
                       €{reservation.totalPrice.toFixed(2)}
                     </div>
                   )}
@@ -301,24 +301,24 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
                       step="0.01"
                       value={editData.depositPaid}
                       onChange={(e) => setEditData(prev => ({ ...prev, depositPaid: e.target.value }))}
-                      className="w-full px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                      className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
                     />
                   ) : (
-                    <div className="px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg font-semibold">
+                    <div className="px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg font-semibold">
                       €{reservation.depositPaid.toFixed(2)}
                     </div>
                   )}
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Remaining Amount</label>
-                  <div className={`px-4 py-3 border border-gray-500 rounded-lg font-semibold ${
+                  <div className={`px-4 py-3 border border-gray-600 rounded-lg font-semibold ${
                     isEditing 
                       ? remainingAmount > 0 
-                        ? 'bg-yellow-900/30 text-yellow-400' 
-                        : 'bg-green-900/30 text-green-400'
+                        ? 'bg-red-900/30 text-red-500' 
+                        : 'bg-red-900/20 text-red-300'
                       : reservation.totalPrice - reservation.depositPaid > 0
-                        ? 'bg-yellow-900/30 text-yellow-400'
-                        : 'bg-green-900/30 text-green-400'
+                        ? 'bg-red-900/30 text-red-500'
+                        : 'bg-red-900/20 text-red-300'
                   }`}>
                     €{isEditing ? remainingAmount.toFixed(2) : (reservation.totalPrice - reservation.depositPaid).toFixed(2)}
                   </div>
@@ -327,25 +327,25 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
             </div>
 
             {/* Payment Status */}
-            <div className="bg-gray-700 border border-gray-600 rounded-lg p-6">
+            <div className="bg-black border border-gray-700 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-white mb-4">Payment Status</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex items-center justify-between p-4 bg-gray-600 rounded-lg">
+                <div className="flex items-center justify-between p-4 bg-gray-800 rounded-lg">
                   <span className="text-white">Deposit Status</span>
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                     reservation.depositPaidStatus
-                      ? 'bg-green-900/30 text-green-400'
-                      : 'bg-yellow-900/30 text-yellow-400'
+                      ? 'bg-red-900/20 text-red-300'
+                      : 'bg-red-900/30 text-red-500'
                   }`}>
                     {reservation.depositPaidStatus ? 'Paid' : 'Pending'}
                   </span>
                 </div>
-                <div className="flex items-center justify-between p-4 bg-gray-600 rounded-lg">
+                <div className="flex items-center justify-between p-4 bg-gray-800 rounded-lg">
                   <span className="text-white">Rest Payment Status</span>
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                     reservation.restPaidStatus
-                      ? 'bg-green-900/30 text-green-400'
-                      : 'bg-yellow-900/30 text-yellow-400'
+                      ? 'bg-red-900/20 text-red-300'
+                      : 'bg-red-900/30 text-red-500'
                   }`}>
                     {reservation.restPaidStatus ? 'Paid' : 'Pending'}
                   </span>
@@ -355,7 +355,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
 
             {/* Design Images */}
             {reservation.designImages.length > 0 && (
-              <div className="bg-gray-700 border border-gray-600 rounded-lg p-6">
+              <div className="bg-black border border-gray-700 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
                   <Camera className="w-5 h-5 mr-2" />
                   Design Images ({reservation.designImages.length})
@@ -368,7 +368,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
                         setSelectedImages(reservation.designImages);
                         setSelectedImageIndex(index);
                       }}
-                      className="relative group aspect-square rounded-lg overflow-hidden border-2 border-gray-600 hover:border-yellow-500 transition-colors"
+                      className="relative group aspect-square rounded-lg overflow-hidden border-2 border-gray-700 hover:border-red-500 transition-colors"
                     >
                       <img
                         src={image}
@@ -389,7 +389,7 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
             )}
 
             {/* Notes */}
-            <div className="bg-gray-700 border border-gray-600 rounded-lg p-6">
+            <div className="bg-black border border-gray-700 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
                 <FileText className="w-5 h-5 mr-2" />
                 Notes
@@ -399,11 +399,11 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
                   value={editData.notes}
                   onChange={(e) => setEditData(prev => ({ ...prev, notes: e.target.value }))}
                   rows={4}
-                  className="w-full px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors placeholder-gray-400"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors placeholder-gray-400"
                   placeholder="Add notes about the reservation..."
                 />
               ) : (
-                <div className="px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg min-h-[100px]">
+                <div className="px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg min-h-[100px]">
                   {reservation.notes || (
                     <span className="text-gray-400 italic">No notes added</span>
                   )}
@@ -414,17 +414,17 @@ export const ReservationModal: React.FC<ReservationModalProps> = ({ reservationI
 
           {/* Footer */}
           {isEditing && (
-            <div className="flex justify-end space-x-4 p-6 border-t border-orange-900">
+            <div className="flex justify-end space-x-4 p-6 border-t border-red-900">
               <button
                 onClick={handleCancel}
-                className="px-6 py-3 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-700 transition-colors"
+                className="px-6 py-3 border border-gray-700 text-gray-300 rounded-lg hover:bg-gray-800 transition-colors"
               >
                 Cancel
               </button>
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="px-6 py-3 bg-gradient-to-r from-yellow-600 to-amber-700 text-black rounded-lg hover:from-yellow-500 hover:to-amber-600 transition-all font-semibold flex items-center space-x-2"
+                className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg hover:from-red-500 hover:to-red-600 transition-all font-semibold flex items-center space-x-2"
               >
                 <Save size={16} />
                 <span>{saving ? 'Saving...' : 'Save Changes'}</span>
