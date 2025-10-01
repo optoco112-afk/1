@@ -53,9 +53,9 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, setActiveTab 
         <div className="flex items-center space-x-3">
           <div className="w-12 h-12 rounded-lg flex items-center justify-center">
             <img 
-              src="/image.png"
+              src="/5962919151527904821.jpg"
               alt="Krampus Tattoo Logo" 
-              className="w-12 h-12"
+              className="w-12 h-12 rounded-full border border-orange-600"
             />
           </div>
           <div>

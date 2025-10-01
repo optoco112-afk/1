@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useData } from '../context/DataContext';
-import { Plus, CreditCard as Edit, Trash2, Shield, User } from 'lucide-react';
+import { Plus, Edit, Trash2, Shield, User } from 'lucide-react';
 
 export const StaffManagement: React.FC = () => {
   const { staff, addStaff, updateStaff, deleteStaff, loading } = useData();
@@ -107,7 +107,7 @@ export const StaffManagement: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="bg-gray-900 border border-red-900 rounded-2xl shadow-lg p-8">
+      <div className="bg-gray-800 border border-orange-900 rounded-2xl shadow-lg p-8">
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-bold text-white mb-2 tracking-wide">Staff Management</h1>
@@ -115,7 +115,7 @@ export const StaffManagement: React.FC = () => {
           </div>
           <button
             onClick={() => setShowAddForm(true)}
-            className="bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 rounded-lg hover:from-red-500 hover:to-red-600 transition-all flex items-center space-x-2 font-semibold"
+            className="bg-gradient-to-r from-yellow-600 to-amber-700 text-black px-6 py-3 rounded-lg hover:from-yellow-500 hover:to-amber-600 transition-all flex items-center space-x-2 font-semibold"
           >
             <Plus size={20} />
             <span>Add Staff Member</span>
@@ -123,7 +123,7 @@ export const StaffManagement: React.FC = () => {
         </div>
 
         {showAddForm && (
-          <div className="mb-8 bg-black border border-red-800 rounded-lg p-6">
+          <div className="mb-8 bg-gray-700 border border-orange-800 rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-4 text-white">
               {editingStaff ? 'Edit Staff Member' : 'Add New Staff Member'}
             </h2>
@@ -138,7 +138,7 @@ export const StaffManagement: React.FC = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors placeholder-gray-400"
                     required
                   />
                 </div>
@@ -151,7 +151,7 @@ export const StaffManagement: React.FC = () => {
                     name="username"
                     value={formData.username}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors placeholder-gray-400"
                     required
                   />
                 </div>
@@ -164,7 +164,7 @@ export const StaffManagement: React.FC = () => {
                     name="password"
                     value={formData.password}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors placeholder-gray-400"
                     required
                   />
                 </div>
@@ -176,7 +176,7 @@ export const StaffManagement: React.FC = () => {
                     name="role"
                     value={formData.role}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
+                    className="w-full px-4 py-3 bg-gray-600 border border-gray-500 text-white rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
                   >
                     <option value="staff">Staff</option>
                     <option value="artist">Tattoo Artist</option>
@@ -188,14 +188,14 @@ export const StaffManagement: React.FC = () => {
                 <button
                   type="button"
                   onClick={resetForm}
-                  className="px-6 py-3 border border-gray-700 text-gray-300 rounded-lg hover:bg-gray-800 transition-colors"
+                  className="px-6 py-3 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-600 transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-lg hover:from-red-500 hover:to-red-600 transition-all font-semibold"
+                  className="px-6 py-3 bg-gradient-to-r from-yellow-600 to-amber-700 text-black rounded-lg hover:from-yellow-500 hover:to-amber-600 transition-all font-semibold"
                 >
                   {submitting ? 'Saving...' : editingStaff ? 'Update' : 'Add'} Staff Member
                 </button>
@@ -220,7 +220,7 @@ export const StaffManagement: React.FC = () => {
                 <tr key={staffMember.id} className="border-b border-gray-700 hover:bg-gray-700/50">
                   <td className="py-4 px-4">
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gradient-to-r from-red-600 to-red-800 rounded-full flex items-center justify-center">
+                      <div className="w-10 h-10 bg-gradient-to-r from-orange-600 to-orange-800 rounded-full flex items-center justify-center">
                         <User className="w-5 h-5 text-white" />
                       </div>
                       <div>
@@ -236,7 +236,7 @@ export const StaffManagement: React.FC = () => {
                   </td>
                   <td className="py-4 px-4">
                     <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium capitalize ${
-                      staffMember.role === 'admin' ? 'bg-red-900/30 text-red-400' :
+                      staffMember.role === 'admin' ? 'bg-yellow-600/30 text-yellow-400' :
                       staffMember.role === 'artist' ? 'bg-purple-900/30 text-purple-400' :
                       'bg-blue-900/30 text-blue-400'
                     }`}>
@@ -247,7 +247,7 @@ export const StaffManagement: React.FC = () => {
                   <td className="py-4 px-4">
                     <div className="flex flex-wrap gap-1">
                       {staffMember.permissions.map((permission) => (
-                        <span key={permission} className="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">
+                        <span key={permission} className="px-2 py-1 bg-gray-600 text-gray-300 rounded text-xs">
                           {permission}
                         </span>
                       ))}
@@ -257,14 +257,14 @@ export const StaffManagement: React.FC = () => {
                     <div className="flex space-x-2">
                       <button
                         onClick={() => handleEdit(staffMember)}
-                        className="p-2 text-red-400 hover:bg-red-900/20 rounded-lg transition-colors"
+                        className="p-2 text-blue-400 hover:bg-blue-900/20 rounded-lg transition-colors"
                         title="Edit"
                       >
                         <Edit size={16} />
                       </button>
                       <button
                         onClick={() => handleDelete(staffMember.id)}
-                        className="p-2 text-red-500 hover:bg-red-900/20 rounded-lg transition-colors"
+                        className="p-2 text-red-400 hover:bg-red-900/20 rounded-lg transition-colors"
                         title="Delete"
                       >
                         <Trash2 size={16} />

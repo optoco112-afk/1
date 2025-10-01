@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useData } from '../context/DataContext';
-import { X, Save, CreditCard as Edit, Calendar, Clock, User, Phone, DollarSign, FileText, Camera, Download } from 'lucide-react';
+import { X, Save, Edit, Calendar, Clock, User, Phone, DollarSign, FileText, Camera, Download } from 'lucide-react';
 import { ImageModal } from './ImageModal';
 import { generatePDF } from '../utils/pdfGenerator';
 import { TimeSelector } from './TimeSelector';
