@@ -96,7 +96,6 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, setActiveTab 
         </div>
         <button
           onClick={logout}
-          className="w-full flex items-center space-x-3 px-4 py-3 text-orange-400 hover:bg-orange-900/20 rounded-lg transition-colors"
           className="w-full flex items-center space-x-3 px-4 py-3 text-yellow-400 hover:bg-yellow-600/20 rounded-lg transition-colors"
         >
           <LogOut size={20} />

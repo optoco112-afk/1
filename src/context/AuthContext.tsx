@@ -30,6 +30,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem('tattoo_studio_user');
+  };
+
   // Auto-logout after 30 minutes of inactivity
   useEffect(() => {
     let inactivityTimer: NodeJS.Timeout;
@@ -39,7 +44,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const resetTimer = () => {
       lastActivity = Date.now();
       clearTimeout(inactivityTimer);
-      
+
       if (user) {
         inactivityTimer = setTimeout(() => {
           // Check if user is still inactive
@@ -82,7 +87,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         document.removeEventListener(event, handleActivity, true);
       });
     };
-  }, [user]);
+  }, [user, logout]);
   useEffect(() => {
     // Check if user is already logged in
     const savedUser = localStorage.getItem('tattoo_studio_user');
@@ -132,11 +137,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     } finally {
       setLoading(false);
     }
-  };
-
-  const logout = () => {
-    setUser(null);
-    localStorage.removeItem('tattoo_studio_user');
   };
 
   return (
